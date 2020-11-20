@@ -1,28 +1,25 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
-      <h1 class="title">
-        hello
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <!-- vuexのstoreを表示クラシックモード -->
+      <!-- <p> {{ $store.state.message }} </p> -->
+      <!-- vuex モジュールモード -->
+      <p> {{ $store.state.hello.message }} </p>
+
+      <!-- componentからmutationを実行 -->
+      <!-- <button v-on:click="$store.commit('updateMessage')">Update</button> -->
+
+      <!-- 引数を使用しmutationを実行 -->
+      <!-- <button v-on:click="$store.commit('updateMessage','Commit with payload')">Update</button> -->
+
+      <!-- クラシックモード -->
+      <!-- <button v-on:click="$store.dispatch('updateMessageAction','Dipatch with payload')">Update</button> -->
+
+      <!-- モジュールモード -->
+ <button v-on:click="$store.dispatch('hello/updateMessageAction', 'Dispatch with payload')">Dispatch</button>
+
+      <!-- nuxt ~/でフォルダ指定 -->
+      <img src="~/assets/img/woman.jpg">
     </div>
   </div>
 </template>
@@ -31,43 +28,9 @@
 export default {}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style scoped>
+  img {
+    width: 100%;
+    height: auto;
+  }
 </style>

@@ -1,4 +1,4 @@
-# hello
+# nuxt-assets
 
 ## Build Setup
 
