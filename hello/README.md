@@ -1,4 +1,4 @@
-# hello
+# nuxt-async
 
 ## Build Setup
 
