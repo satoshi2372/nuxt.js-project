@@ -1,4 +1,4 @@
-# nuxt-async
+# nuxt-assets
 
 ## Build Setup
 
